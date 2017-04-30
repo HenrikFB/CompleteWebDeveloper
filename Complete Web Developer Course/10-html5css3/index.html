@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>html 5 and css 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+   
+	<style>
+      
+        
+    </style>
+    
+	</head>
+	
+     
+	<body>
+
+	<canvas id="clock" width="500" height="500">
+      
+	  please upgrade your browser.
+	  
+      </canvas>
+      
+      <script>
+	  
+	  var canvas = document.getElementById("clock");
+	  var context = canvas.getContext("2d");
+	  var clockRadius = canvas.width/2;
+	
+	context.beginPath();
+		context.arc(clockRadius, clockRadius,clockRadius, 0, 2*Math.PI);
+		context.fill();
+		
+		context.font=clockRadius/10 + "px arial";
+		context.fillStyle = "white";
+		context.textAlign = "center";
+		context.textBaseline = "middle";
+		
+		
+			for (var i = 1; i<= 12; i++){
+			
+				context.fillText(i, clockRadius + clockRadius * 0.9 * Math.sin(i * 2*Math.PI / 12), clockRadius - (clockRadius *0.9 * Math.cos(i * 2 * Math.PI/12)));
+				
+			}
+			
+			var hours = new Data().getHours;
+			var minutes = new Date().getMinutes;
+			var seconds = new Date().getSeconds;
+			
+			var fullHours = hours % 12 + minutes / 60 + seconds / 3600;
+			
+			var hoursAngle = fullHours * 2 * Math.Pi / 12;
+			var minutesAngle = minutes * 2 * Math.PI / 12;
+			var secondsAngle = seconds * 2 * Math.PI / 12;
+			
+			context.moveTo(clockRadius, clockRadius);
+			content.lineTo(clockRadius + clockRadius * 0.9 * Math.sin(hoursAngle), );
+    /*variable
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 200;
+		
+		
+	//circle
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = 'black';
+      context.fill();
+	  
+    
+       
+	   
+	   function second(x, y){
+	  
+	   
+	   context.moveTo(250, 300);
+        context.lineTo(350, 100);
+		 context.strokeStyle = "#F42924";
+          context.stroke();
+		
+		}
+		
+	   function minute(x){
+		
+		
+		  context.moveTo(150 + x, 100);
+          context.lineTo(350, 300);
+		  context.strokeStyle = "#F42924";
+          context.stroke();
+			
+		  
+		}
+		
+		
+			for (i = 0; i<400; i++){
+		minute(10);
+		x++;
+        
+		} 
+	*/
+	  
+	  
+      </script>
+    
+	
+	
+	
+  </body>
+</html>
